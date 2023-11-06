@@ -8,7 +8,8 @@ LIBOBJECTS=putchar.o wait.o print.o memcpy.o errno.o perf.o
 
 %.bram.elf: %.o start.o $(LIBOBJECTS) $(RV_BINARIES)
 	$(RVLD) -T bram.ld -m elf32lriscv -nostdlib -norelax $< $(LIBOBJECTS) $(RVTOOLCHAIN_GCC_LIB_DIR)/libgcc.a -o $@
-
+	riscv64-unknown-elf-objdump -D $@ > $*.lst
+	cp $@ ../firmware.elf
 
 %.hex: %.elf $(FIRMWARE_DIR)/TOOLS/firmware_words 
 	$(FIRMWARE_DIR)/TOOLS/firmware_words $< -ram $(RAM_SIZE) -max_addr $(RAM_SIZE) -out $@
@@ -52,7 +53,7 @@ LIBOBJECTS=putchar.o wait.o print.o memcpy.o errno.o perf.o
 	$(RVOBJCOPY) $< $@ -O binary
 
 %.spiflash2.prog: %.spiflash2.bin
-	iceprog -o 128k $<
+	sudo openFPGALoader -b arty_a7_35t -o 3145728 -f $<
 
 %.spiflash2.list: %.spiflash2.elf
 	$(RVOBJDUMP) -Mnumeric -D $< > $@

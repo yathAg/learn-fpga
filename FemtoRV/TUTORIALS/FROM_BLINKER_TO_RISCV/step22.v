@@ -7,6 +7,8 @@
 `include "clockworks.v"
 `include "emitter_uart.v"
 `include "spi_flash.v"
+`define ARTY
+`define CPU_FREQ 100
 
 module Memory (
    input             clk,
@@ -326,7 +328,8 @@ module SOC (
     output 	     TXD, // UART transmit
     output 	     SPIFLASH_CLK,  // SPI flash clock
     output 	     SPIFLASH_CS_N, // SPI flash chip select (active low)
-    inout [1:0]      SPIFLASH_IO    // SPI flash IO pins
+    output       SPIFLASH_MOSI, // master out slave in (data to be sent to flash)
+    input        SPIFLASH_MISO
 );
 
    wire clk;
@@ -376,7 +379,8 @@ module SOC (
       .rbusy(SPIFlash_rbusy),
       .CLK(SPIFLASH_CLK),
       .CS_N(SPIFLASH_CS_N),
-      .IO(SPIFLASH_IO)			   
+      .MOSI(SPIFLASH_MOSI), 
+      .MISO(SPIFLASH_MISO)		   
    );
    
    // Memory-mapped IO in IO page, 1-hot addressing in word address.   
