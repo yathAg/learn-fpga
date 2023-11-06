@@ -50,19 +50,14 @@ set_property -dict { PACKAGE_PIN G13   IOSTANDARD LVCMOS33 } [get_ports { LEDS[4
 #set_property -dict { PACKAGE_PIN K16   IOSTANDARD LVCMOS33 } [get_ports { ja[7] }]; #IO_25_15 Sch=ja[10]
 
 ## Pmod Header JB
-set_property -dict { PACKAGE_PIN E15   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CS_N }]; #IO_L11P_T1_SRCC_15 Sch=jb_p[1]
-set_property -dict { PACKAGE_PIN E16   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MOSI }]; #IO_L11N_T1_SRCC_15 Sch=jb_n[1]
-set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MISO }]; #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
-set_property -dict { PACKAGE_PIN C15   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CLK }]; #IO_L12N_T1_MRCC_15 Sch=jb_n[2]
+# set_property -dict { PACKAGE_PIN E15   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CS_N }]; #IO_L11P_T1_SRCC_15 Sch=jb_p[1]
+# set_property -dict { PACKAGE_PIN E16   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MOSI }]; #IO_L11N_T1_SRCC_15 Sch=jb_n[1]
+# set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MISO }]; #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
+# set_property -dict { PACKAGE_PIN C15   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CLK }]; #IO_L12N_T1_MRCC_15 Sch=jb_n[2]
 #set_property -dict { PACKAGE_PIN J17   IOSTANDARD LVCMOS33 } [get_ports { jb[4] }]; #IO_L23P_T3_FOE_B_15 Sch=jb_p[3]
 #set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { jb[5] }]; #IO_L23N_T3_FWE_B_15 Sch=jb_n[3]
 #set_property -dict { PACKAGE_PIN K15   IOSTANDARD LVCMOS33 } [get_ports { jb[6] }]; #IO_L24P_T3_RS1_15 Sch=jb_p[4]
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { jb[7] }]; #IO_L24N_T3_RS0_15 Sch=jb_n[4]
-
-# set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CS_N }]; #IO_L6P_T0_FCS_B_14 Sch=qspi_cs
-# set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MOSI }]; #IO_L1P_T0_D00_MOSI_14 Sch=qspi_dq[0]
-# set_property -dict { PACKAGE_PIN K18   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MISO }]; #IO_L1N_T0_D01_DIN_14 Sch=qspi_dq[1]
-# set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CLK }]; 
 
 ## Pmod Header JC
 #set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { jc[0] }]; #IO_L20P_T3_A08_D24_14 Sch=jc_p[1]
@@ -219,3 +214,8 @@ set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { RXD }]
 #set_property -dict { PACKAGE_PIN F13   IOSTANDARD LVCMOS33     } [get_ports { isns5v0_p }]; #IO_L5P_T0_AD9P_15 Sch=ad_p[9]
 #set_property -dict { PACKAGE_PIN A16   IOSTANDARD LVCMOS33     } [get_ports { isns0v95_n }]; #IO_L8N_T1_AD10N_15 Sch=ad_n[10]
 #set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33     } [get_ports { isns0v95_p }]; #IO_L8P_T1_AD10P_15 Sch=ad_p[10]
+
+set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CS_N }]; #IO_L6P_T0_FCS_B_14 Sch=qspi_cs
+set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MOSI }]; #IO_L1P_T0_D00_MOSI_14 Sch=qspi_dq[0]
+set_property -dict { PACKAGE_PIN K18   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_MISO }]; #IO_L1N_T0_D01_DIN_14 Sch=qspi_dq[1]
+set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { SPIFLASH_CLK }]; 
