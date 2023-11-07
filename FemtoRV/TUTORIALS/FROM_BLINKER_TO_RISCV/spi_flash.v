@@ -39,6 +39,8 @@
 // It is a pity, because one could go really fast with these pins !
 
 // Macros to select version and number of dummy cycles based on the board.
+ `define ARTY
+ `define CPU_FREQ 100
 
 `ifdef ICE_STICK
  `define SPI_FLASH_FAST_READ_DUAL_IO

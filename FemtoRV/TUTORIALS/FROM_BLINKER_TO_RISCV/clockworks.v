@@ -19,7 +19,8 @@
  *     NEGATIVE_RESET if board's RESET pin goes low on reset
  *     ICE_STICK if board is an IceStick.
  */    
- 
+ `define ARTY
+ `define CPU_FREQ 100
 `include "../../RTL/PLL/femtopll.v"
 
 `ifdef ECP5_EVN

@@ -2,7 +2,8 @@
  * Step 20: Creating a RISC-V processor
  * Using GNU tools
  */
-
+`define CPU_FREQ 100
+`define ARTY
 `default_nettype none
 `include "clockworks.v"
 `include "emitter_uart.v"
@@ -253,7 +254,7 @@ module Processor (
    reg [2:0] state = FETCH_INSTR;
    
    always @(posedge clk) begin
-      if(!resetn) begin
+      if(resetn) begin
 	 PC    <= 0;
 	 state <= FETCH_INSTR;
       end else begin
@@ -374,7 +375,7 @@ module SOC (
         .baud_rate(1000000)
    ) UART(
       .i_clk(clk),
-      .i_rst(!resetn),
+      .i_rst(resetn),
       .i_data(mem_wdata[7:0]),
       .i_valid(uart_valid),
       .o_ready(uart_ready),
